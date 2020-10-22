@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+<body>
+    <script>
+        class Point
+        {
+            constructor (x,y)
+            {
+                this.x = x;
+                this.y= y;
+            }
+        }
+        class Shape extends Point
+        {
+            constructor(edges,x,y)
+            {
+                super(x,y);
+                this.edges = edges;
+            }
+
+            perimeter()
+            {
+             console.log("shape is in perimeter");   
+            }
+
+            area()
+            {
+                console.log("Circle is created")
+            }
+        }
+        class Triangle extends Shape
+        {
+            constructor(radius,edges,x,y)
+            {
+                super(edges,x,y);
+                this.radius = radius;
+            }
+            area()
+            {
+                let a = 3.14 * this.radius * this.radius;
+                console.log("Area of Triangle ="+a);
+            }
+            perimeter()
+            
+            {
+                let p = 2 * 3.14 *this.radius;
+                console.log("perimeter of Triangle ="+p);
+            }
+
+        }
+        class Rectangle extends Shape
+        {
+            constructor(edges,x,y)
+            {
+                super(edges,x,y);
+                
+            }
+            area()
+            {
+                let a = this.x * this.y;
+                console.log("Area of Rectangle ="+a);
+            }
+            perimeter()
+            
+            {
+                let p = (2 * this.x) + (2 * this.y);
+                console.log("perimeter of Rectangle ="+p);
+            }
+
+        }
+        class Square extends Shape
+        {
+            constructor(edges,x,y)
+            {
+                super(edges,x,y);
+                
+            }
+            area()
+            {
+                let a = this.x * this.y ;
+                console.log("Area of Square ="+a);  
+            }
+            perimeter()
+            
+            {
+                let p = 4 * this.x;
+                console.log("perimeter of square ="+p);
+            }
+
+        }
+        let squ = new Square(4,4,10,10);
+        squ.area();
+        squ.perimeter();
+        let rect = new Rectangle(20,10,4,10,10);
+        rect.area();
+        rect.perimeter();
+        // let cir = new Circle(5,0,10,10);
+        // cir.area();
+        // cir.perimeter();
+    </script>
+</body>
+</html>
